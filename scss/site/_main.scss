@@ -1,0 +1,42 @@
+.container {
+  margin: 0 auto;
+  padding: 0 1rem;
+  max-width: 60rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  max-width: 31.25rem;
+}
+
+.d-block {
+  display: block;
+}
+
+.intro {
+  margin-bottom: 1.5rem;
+}
+
+.color-gen {
+  .linked-img {
+    max-width: 320px;
+    max-height: 300px;
+    margin: 0 auto;
+  }
+  .palette {
+    margin-bottom: 3rem;
+  }
+  .palette > div {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: var(--color);
+    margin: 2px;
+    &::after {
+      content: attr(color);
+      font-family: monospace;
+      margin-left: 24px;
+      white-space: nowrap;
+    }
+  }
+}

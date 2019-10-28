@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="generate a web palette from an image">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Color Stripper</title>
+    <link rel="stylesheet" href="./css/styles.min.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>
+        Color Stripper
+        <span class="tagline">A Web Palette Generator</span>
+      </h1>
+    </div>
+  </header>
+  
+  <main class="container">
+    <section class="intro">
+      <h2>Color Trouble?</h2>
+      <p>Take an image and then generate a matching palette! Use it for a whole page or just to spur component ideas... or just have a bit of fun with it.</p>
+
+      <form class="img-submit">
+        <label for="imgUrl" class="d-block">Enter Image URL</label>
+        <input type="text" id="imgUrl" name="imgURL" />
+  
+        <p class="error"></p>
+  
+        <label for="numSwatches">Palette Size:</label>
+        <select name="numSwatches" id="numSwatches">
+          <option value="3">3</option>
+          <option value="4" selected>4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+        </select>
+  
+        <button type="submit" class="d-block">Get Colors</button>
+      </form>
+    </section>
+
+    <section class="color-gen">
+      <img class="linked-img d-block" src="./img/placeholder.jpg" alt="Image Sample" crossorigin="anonymous"/>
+      
+      <div>
+        <h3>Palette</h3>
+        <div class="palette"></div>
+      </div>
+
+      <div class="sample-box">
+        <h2>Sample Box</h2>
+        <p>An auto generated example of what these might look like together. It could probably use some tweaking, or maybe you got lucky and this looks great. The background is set to use the most prominant image color, section backgrounds as the second, and text the third. Next up it grabs a color for <a href="#">links</a> and borders.</p>
+
+        <p>Maybe in the future this will be expanded into dynamic options users can pick to apply from the palette instead of being auto-generated...</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Thank you to <strong>Lokesh Dhakar</strong> for <a href="https://lokeshdhakar.com/projects/color-thief/">Color Thief</a></p>
+  </footer>
+    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="js/color-thief.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

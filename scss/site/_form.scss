@@ -1,0 +1,36 @@
+.img-submit {
+  margin-bottom: 1.5rem;
+
+  button {
+    width: 100%;
+    max-width: 20rem;
+  }
+}
+
+label {
+  text-transform: uppercase;
+}
+
+input,
+select,
+button {
+  font-size: 1rem;
+  line-height: 3rem;
+}
+
+input {
+  width: 100%;
+  max-width: 31.25rem;
+  padding: 0 0.5rem;
+}
+
+select {
+  height: 2rem;
+  width: 3rem;
+  margin: 0 0 1.5rem 0.5rem;
+}
+
+.error {
+  font-size: $smaller;
+  color: $magenta;
+}
