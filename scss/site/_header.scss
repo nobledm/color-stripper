@@ -9,7 +9,7 @@ header {
   margin-bottom: 3rem;
   padding: 5rem 0;
   text-align: center;
-  color: rgb(255, 255, 247);
+  color: $off-white;
 
   h1 {
     display: inline-block;
@@ -17,10 +17,13 @@ header {
 
   .tagline {
     display: block;
-    // margin: -2.5rem 0 0 0.25rem;
     font-family: $body-font;
     font-size: 1rem;
     text-transform: uppercase;
     text-align: left;
+
+    @media only screen and (min-width:60rem) {
+      margin: -2.5rem 0 0 0.25rem;
+    }
   }
 }

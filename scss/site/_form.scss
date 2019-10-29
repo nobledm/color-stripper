@@ -1,9 +1,28 @@
 .img-submit {
   margin-bottom: 1.5rem;
 
+  @media only screen and (min-width:640px) {
+    margin-bottom: 3rem;
+  }
+
   button {
+    background: $magenta;
+    color: $off-white;
+    border: 0;
     width: 100%;
-    max-width: 20rem;
+    
+    @media only screen and (min-width:500px) {
+      max-width: 15rem;
+    }
+
+    &:hover,
+    &:active {
+      background: darken($magenta, 10%);
+    }
+
+    &:focus {
+      outline: none;
+    }
   }
 }
 

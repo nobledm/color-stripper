@@ -1,5 +1,14 @@
+main {
+  margin-bottom: 3rem;
+
+  @media only screen and (min-width: 40rem) {
+    margin-bottom: 4.5rem;
+  }
+}
+
 .container {
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0 1rem;
   max-width: 60rem;
 }
@@ -19,24 +28,46 @@ p {
 
 .color-gen {
   .linked-img {
-    max-width: 320px;
-    max-height: 300px;
-    margin: 0 auto;
+    max-width: 100%;
+    max-height: 400px;
+    margin: 0 auto 1.5rem;
   }
-  .palette {
+
+  .swatches {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
     margin-bottom: 3rem;
+
+    & > div {
+      display:inline-block;
+      width: 40px;
+      height: 40px;
+      background-color: var(--color);
+      margin: 0.25rem;
+      margin-right: 5rem;
+
+      &:after {
+        content: attr(hex);
+        font-family: monospace;
+        margin-left: 44px;
+        white-space: nowrap;
+        line-height: 40px;
+      }
+    }
   }
-  .palette > div {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background-color: var(--color);
-    margin: 2px;
-    &::after {
-      content: attr(color);
-      font-family: monospace;
-      margin-left: 24px;
-      white-space: nowrap;
+
+  @media only screen and (min-width:40rem) {
+    display: flex;
+    flex-wrap: wrap;
+
+    .linked-img {
+      max-width: 48.75%;
+      margin: 0 2rem 3rem 0;
+    }
+
+    .palette {
+      max-width: 250px;
     }
   }
 }
