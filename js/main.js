@@ -6,6 +6,19 @@ let error = document.querySelector(".error");
 let numSwatches = 4;
 
 /**
+ * Given an array of rgb values, updates the color variables for the sample box
+ * @param {Array} colors 
+ */
+const colorBox = (colors) => {
+  const sampleBox = document.querySelector('.sample-box');
+
+  sampleBox.style.setProperty('--sample-bg', colors[0]);
+  sampleBox.style.setProperty('--sample-head-bg', colors[1]);
+  sampleBox.style.setProperty('--sample-text', colors[2]);
+  sampleBox.style.setProperty('--sample-link', colors[3]);
+}
+
+/**
  * Converts an RGB color into HEX
  * @param {Number} r - Red color value from 0-255
  * @param {Number} g - Green color value from 0-255
@@ -30,6 +43,7 @@ img.addEventListener("error", () => {
 // Watches for new image loads and generates a swatches
 img.addEventListener("load", () => {
   const colors = colorThief.getPalette(img, numSwatches);
+  const swatchList = [];
 
   // clear out any existing swatches
   while (swatches.firstChild) {
@@ -43,8 +57,12 @@ img.addEventListener("load", () => {
     swatch.style.setProperty("--color", color);
     swatch.setAttribute("hex", `${rgbToHex(rgb[0], rgb[1], rgb[2])}`);
     swatches.appendChild(swatch);
+
+    swatchList.push(color);
     return swatches;
   }, swatches);
+
+  colorBox(swatchList);
 });
 
 // watch for form submission and change img src attribute if valid
