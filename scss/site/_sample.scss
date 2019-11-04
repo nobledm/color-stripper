@@ -1,0 +1,35 @@
+.sample-box {
+  --sample-bg: rgb(255, 255, 247);
+  --sample-head-bg: rgb(173, 10, 91);
+  --sample-text: rgb(22, 16, 16);
+  --sample-link: rgb(173, 10, 91);
+
+  flex: 0 0 80%;
+  margin: 4rem 0 3rem;
+
+  background: var(--sample-bg);
+  color: var(--sample-text);
+  border: 2px solid var(--sample-link);
+
+  h2 {
+    background: var(--sample-head-bg);
+    color: var(--sample-bg);
+    padding: 1.5rem;
+  }
+
+  p {
+    padding: 1.5rem 1.5rem 0;
+  }
+
+  a {
+    color: var(--sample-link);
+  }
+
+  @media only screen and (min-width: 40rem) {
+    display: inline-block;
+  }
+
+  @media only screen and (min-width: 60rem) {
+    flex: 0 0 75%;
+  }
+}

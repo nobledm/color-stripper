@@ -7,14 +7,18 @@ let numSwatches = 4;
 
 /**
  * Converts an RGB color into HEX
- * @param {Number} r - Red color value from 0-255 
+ * @param {Number} r - Red color value from 0-255
  * @param {Number} g - Green color value from 0-255
  * @param {Number} b - Blue color value from 0-255
  */
-const rgbToHex = (r, g, b) => '#' + [r, g, b].map(x => {
-  const hex = x.toString(16);
-  return hex.length === 1 ? '0' + hex : hex;
-}).join('');
+const rgbToHex = (r, g, b) =>
+  "#" +
+  [r, g, b]
+    .map(x => {
+      const hex = x.toString(16);
+      return hex.length === 1 ? "0" + hex : hex;
+    })
+    .join("");
 
 /**
  * Watches for errors on loading the image
@@ -41,7 +45,7 @@ img.addEventListener("load", () => {
     const swatch = document.createElement("div");
 
     swatch.style.setProperty("--color", color);
-    swatch.setAttribute("hex", `${rgbToHex(rgb[0],rgb[1],rgb[2])}`);
+    swatch.setAttribute("hex", `${rgbToHex(rgb[0], rgb[1], rgb[2])}`);
     swatches.appendChild(swatch);
     return swatches;
   }, swatches);
