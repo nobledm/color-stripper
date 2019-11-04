@@ -7,7 +7,7 @@ let numSwatches = 4;
 
 /**
  * Given an array of rgb values, updates the color variables for the sample box
- * @param {Array} colors 
+ * @param {Array} colors - An array containing string rgb values
  */
 const colorBox = (colors) => {
   const sampleBox = document.querySelector('.sample-box');
