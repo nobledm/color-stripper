@@ -20,18 +20,14 @@ const rgbToHex = (r, g, b) =>
     })
     .join("");
 
-/**
- * Watches for errors on loading the image
- */
+// Watches for errors on loading the image
 img.addEventListener("error", () => {
   img.src = "./img/placeholder.jpg";
   error.innerHTML =
     "Could not find image. Check there are no typos. If it still doesn't work the origin site may be blocking access.";
 });
 
-/**
- * Watches for new image loads and generates a swatches
- */
+// Watches for new image loads and generates a swatches
 img.addEventListener("load", () => {
   const colors = colorThief.getPalette(img, numSwatches);
 
